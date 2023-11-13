@@ -10,6 +10,12 @@ import ChangeFontSize from "./StateDemo/ChangeFontSize";
 import ChangeColor from "./StateDemo/ChangeColor";
 import ChangeAvata from "./StateDemo/ChangeAvata";
 import ChangeCarColor from "./StateDemo/ChangeCarColor";
+import RenderWithMap from "./RenderWithMap/RenderWithMap";
+import DemoProps from "./Props/DemoProps";
+import Card from "./Props/Card";
+import ProductCom from "./Props/ProductCom";
+import ExRenderProductList from "./Props/ExRenderProductList/ExRenderProductList";
+import BaiTapXemChiTiet from "./Props/BaiTapXemChiTiet/BaiTapXemChiTiet";
 //tạo root trên thẻ div #root
 const root = ReactDOM.createRoot(document.querySelector("#root"));
 root.render(
@@ -17,7 +23,7 @@ root.render(
     {/* <DataBinding /> */}
     {/* <p className="text-red">Demo</p>
     <StyleComponent /> */}
-    <HandleEvent />
+    {/* <HandleEvent />
     <ChangeFontSize />
     <hr className="my-5" />
 
@@ -25,6 +31,10 @@ root.render(
     <hr className="my-5" />
     <ChangeAvata />
     <hr className="my-5" />
-    <ChangeCarColor />
+    <ChangeCarColor /> */}
+    {/* <RenderWithMap /> */}
+    {/* <DemoProps /> */}
+    {/* <ExRenderProductList /> */}
+    <BaiTapXemChiTiet />
   </div>
 );
