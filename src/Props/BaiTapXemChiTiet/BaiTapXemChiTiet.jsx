@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import SanphamComponent from "./SanphamComponent";
 const itemProd = [
   {
     maSP: 1,
@@ -56,24 +57,17 @@ export default class BaiTapXemChiTiet extends Component {
     return itemProd.map((sanPham, index) => {
       return (
         <div className="col-4" key={index}>
-          <div className="card">
-            <img src={sanPham.hinhAnh} alt="..." height={350} />
-            <div className="card-body">
-              <h3>{sanPham.tenSP}</h3>
-              <p>{sanPham.giaBan}</p>
-              <button
-                onClick={() => {
-                  this.setState({ spChitiet: sanPham });
-                }}
-                className="btn btn-dark"
-              >
-                Xem chi tiết
-              </button>
-            </div>
-          </div>
+          <SanphamComponent
+            sanPham={sanPham}
+            handleClickXemChiTiet={this.xemChiTiet}
+          />
         </div>
       );
     });
+  };
+
+  xemChiTiet = (sanPham) => {
+    this.setState({ spChitiet: sanPham });
   };
 
   render() {

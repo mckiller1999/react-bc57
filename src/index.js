@@ -16,6 +16,7 @@ import Card from "./Props/Card";
 import ProductCom from "./Props/ProductCom";
 import ExRenderProductList from "./Props/ExRenderProductList/ExRenderProductList";
 import BaiTapXemChiTiet from "./Props/BaiTapXemChiTiet/BaiTapXemChiTiet";
+import BaiTapGioHang from "./Props/BaiTapGioHang/BaiTapGioHang";
 //tạo root trên thẻ div #root
 const root = ReactDOM.createRoot(document.querySelector("#root"));
 root.render(
@@ -35,6 +36,7 @@ root.render(
     {/* <RenderWithMap /> */}
     {/* <DemoProps /> */}
     {/* <ExRenderProductList /> */}
-    <BaiTapXemChiTiet />
+    {/* <BaiTapXemChiTiet /> */}
+    <BaiTapGioHang />
   </div>
 );
