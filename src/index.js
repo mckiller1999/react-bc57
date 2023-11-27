@@ -14,6 +14,7 @@ import UserTemplates from "./components/templates/UserTemplates";
 import Register from "./Pages/Register";
 import Admin from "./Pages/Admin";
 import ReactForm from "./Pages/ReactForm/ReactForm";
+import ReactLifeCycle from "./Pages/ReactLifeCycle/ReactLifeCycle";
 
 //tạo root trên thẻ div #root
 const root = ReactDOM.createRoot(document.querySelector("#root"));
@@ -26,6 +27,7 @@ root.render(
         <Route path="chi-tiet-san-pham" element={<BaiTapXemChiTiet />}></Route>
         <Route path="react-form" element={<ReactForm />}></Route>
         <Route path="change-avata" element={<ChangAvata />}></Route>
+        <Route path="react-life-cycle" element={<ReactLifeCycle />}></Route>
       </Route>
 
       <Route path="gio-hang" element={<BaiTapGioHang />} />

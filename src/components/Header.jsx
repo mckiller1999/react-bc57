@@ -46,6 +46,11 @@ export default class Header extends Component {
                   React form
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/react-life-cycle">
+                  React LifeCycle
+                </NavLink>
+              </li>
             </ul>
             <form className="d-flex my-2 my-lg-0">
               <input
