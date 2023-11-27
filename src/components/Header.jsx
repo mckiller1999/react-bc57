@@ -51,6 +51,16 @@ export default class Header extends Component {
                   React LifeCycle
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/demo-react-redux">
+                  Demo Redux
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/demo-react-redux-changeCar">
+                  Demo Redux Change Car
+                </NavLink>
+              </li>
             </ul>
             <form className="d-flex my-2 my-lg-0">
               <input
