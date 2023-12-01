@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import { connect } from "react-redux";
 
-export default class Header extends Component {
+class Header extends Component {
   render() {
+    const { tongSoLuong, TongTien } = this.props;
     //bs5-navbar-background
     return (
       <div>
@@ -51,29 +53,55 @@ export default class Header extends Component {
                   React LifeCycle
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/demo-react-redux">
-                  Demo Redux
+
+              <li className="nav-item dropdown">
+                <NavLink
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  bài tập redux
                 </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/demo-react-redux-changeCar">
-                  Demo Redux Change Car
-                </NavLink>
+                <ul
+                  className="dropdown-menu bg-dark
+                "
+                >
+                  <li className="nav-item">
+                    <NavLink className="nav-link" to="/demo-react-redux">
+                      Demo Redux
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink
+                      className="nav-link"
+                      to="/demo-react-redux-changeCar"
+                    >
+                      Demo Redux Change Car
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink className="nav-link" to="/redux-change-fontsize">
+                      Change FontSize
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink className="nav-link" to="/redux-gio-hang">
+                      Giỏ hàng redux
+                    </NavLink>
+                  </li>
+                </ul>
               </li>
             </ul>
             <form className="d-flex my-2 my-lg-0">
-              <input
-                className="form-control me-sm-2"
-                type="text"
-                placeholder="Search"
-              />
-              <button
-                className="btn btn-outline-success my-2 my-sm-0"
-                type="submit"
+              <NavLink
+                to="/redux-gio-hang"
+                className={"nav-link mx-5 text-white"}
               >
-                Search
-              </button>
+                <i className="fa fa-2x fa-cart-plus"></i>({tongSoLuong} -
+                {tongSoLuong.toLocaleString()})
+              </NavLink>
             </form>
           </div>
         </nav>
@@ -81,3 +109,19 @@ export default class Header extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  let { gioHang } = state.gioHangState;
+  let tongSoLuong = 0;
+  let tongTien = 0;
+  for (let spGH of gioHang) {
+    tongSoLuong += spGH.tongSoLuong;
+    tongTien += spGH.soLuong * spGH.giaBan;
+  }
+  return {
+    tongSoLuong,
+    tongTien,
+  };
+};
+
+export default connect(mapStateToProps)(Header);

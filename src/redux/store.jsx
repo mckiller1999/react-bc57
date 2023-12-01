@@ -1,8 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
+import imgReducer from "./reducers/imgReducer";
+import fontsizeReducer from "./reducers/fontsizeReducer";
+import giohangReducer from "./reducers/giohangReducer";
 
 export const store = configureStore({
   reducer: {
     //chứa toàn bộ state của ứng dụng
+    //cách 1: tạo action payload ngay trên store
     number: (state = 1, action) => {
       switch (action.type) {
         case "CHANGE_NUMBER_ACTION": {
@@ -14,11 +18,10 @@ export const store = configureStore({
         }
       }
     },
-    img: (state = "./img/CarBasic/products/black-car.jpg", action) => {
-      if (action.type === "CHANGE_CAR_COLOR_ACTION") {
-        state = `/img/CarBasic/products/${action.payload}-car.jpg`;
-      }
-      return state;
-    },
+    //cách 2: tạo action payload trên file Reducer
+    //và gán lại vào store
+    img: imgReducer,
+    fSizeState: fontsizeReducer,
+    gioHangState: giohangReducer,
   },
 });

@@ -20,13 +20,16 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import ChangeNumberRedux from "./DemoRedux/ChangeNumberRedux";
 import ChangeCarColorRedux from "./DemoRedux/ChangeCarColorRedux";
+import ChangeFontSize from "./DemoRedux/ChangeFontSize";
+import BaiTapGioHangRedux from "./DemoRedux/BaiTapGioHangRedux";
+import DanhSachSanPham from "./DemoRedux/DanhSachSanPham";
 const root = ReactDOM.createRoot(document.querySelector("#root"));
 root.render(
   <Provider store={store}>
     <BrowserRouter>
       <Routes>
         <Route path="" element={<HomeTemplates />}>
-          <Route index element={<div>trang chủ</div>}></Route>
+          <Route index element={<DanhSachSanPham />}></Route>
           <Route path="gio-hang" element={<BaiTapGioHang />} />
           <Route
             path="chi-tiet-san-pham"
@@ -43,6 +46,11 @@ root.render(
             path="demo-react-redux-changeCar"
             element={<ChangeCarColorRedux />}
           ></Route>
+          <Route
+            path="redux-change-fontsize"
+            element={<ChangeFontSize />}
+          ></Route>
+          <Route path="redux-gio-hang" element={<BaiTapGioHangRedux />}></Route>
         </Route>
 
         <Route path="gio-hang" element={<BaiTapGioHang />} />
