@@ -100,7 +100,7 @@ class Header extends Component {
                 className={"nav-link mx-5 text-white"}
               >
                 <i className="fa fa-2x fa-cart-plus"></i>({tongSoLuong} -
-                {tongSoLuong.toLocaleString()})
+                {TongTien.toLocaleString()})
               </NavLink>
             </form>
           </div>
@@ -113,14 +113,14 @@ class Header extends Component {
 const mapStateToProps = (state) => {
   let { gioHang } = state.gioHangState;
   let tongSoLuong = 0;
-  let tongTien = 0;
+  let TongTien = 0;
   for (let spGH of gioHang) {
-    tongSoLuong += spGH.tongSoLuong;
-    tongTien += spGH.soLuong * spGH.giaBan;
+    tongSoLuong += spGH.soLuong;
+    TongTien += spGH.soLuong * spGH.giaBan;
   }
   return {
     tongSoLuong,
-    tongTien,
+    TongTien,
   };
 };
 
