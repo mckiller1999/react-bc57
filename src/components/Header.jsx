@@ -5,10 +5,14 @@ import { connect } from "react-redux";
 class Header extends Component {
   render() {
     const { tongSoLuong, TongTien } = this.props;
+
     //bs5-navbar-background
     return (
-      <div>
-        <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+      <div className="d-flex justify-content-center align-items-center mt-4">
+        <nav
+          className="navbar navbar-expand-sm navbar-dark bg-dark"
+          style={{ position: "fixed", zIndex: 100, minWidth: "100%" }}
+        >
           <NavLink className="navbar-brand" to="/">
             Trang Chủ
           </NavLink>

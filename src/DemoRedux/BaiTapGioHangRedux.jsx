@@ -13,7 +13,7 @@ import GioHangRedux from "./GioHangRedux";
 class BaiTapGioHangRedux extends Component {
   render() {
     return (
-      <div className="container my-2">
+      <div className="container mt-5">
         <GioHangRedux />
       </div>
     );
